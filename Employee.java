@@ -1,25 +1,20 @@
-package com.java.q1;
+package com.practise.Q15;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Employee {
-	String name;
-	String year;
-	int rating;
-
-	Employee(String name, String year, int rating) {
-		this.name = name;
-		this.year = year;
-		this.rating = rating;
+	public static void main(String[] args) throws IOException {
+	File f = new File("D:\\FileHandling\\task15.txt");
+	f.createNewFile();
+	FileWriter fw = new FileWriter(f);
+	fw.write("The information cannot be editable");
+	if(f.canRead()) {
+		f.setReadOnly();
+	}else {
+		System.out.println("Cannot Readable");
+	}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public String getYear() {
-		return this.year;
-	}
-
-	public Integer getRating() {
-		return this.rating;
-	}
 }
